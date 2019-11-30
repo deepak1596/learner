@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E167BB12-764E-49B4-9AC5-8BF3FF1DCDE6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>society</RootNamespace>
+    <AssemblyName>society</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DGVPrinter.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="societyDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>societyDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="societyDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>societyDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="societyDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>societyDataSet2.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="societyDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>societyDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="societyDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>societyDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="societyDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>societyDataSet5.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\Form2.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\society.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\society.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\society.societyDataSet1TableAdapters.raiestateTableAdapter.datasource" />
+    <None Include="Properties\DataSources\society.societyDataSet1TableAdapters.raiestatTableAdapter.datasource" />
+    <None Include="Properties\DataSources\society.societyDataSet1TableAdapters.Table2TableAdapter.datasource" />
+    <None Include="Properties\DataSources\society.societyDataSet1TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\society.societyDataSet1TableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\society.societyDataSet1TableAdapters.TableTableAdapter.datasource" />
+    <None Include="Properties\DataSources\society.societyDataSetTableAdapters.QueriesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\society.societyDataSetTableAdapters.raiestateTableAdapter.datasource" />
+    <None Include="Properties\DataSources\society.societyDataSetTableAdapters.Table2TableAdapter.datasource" />
+    <None Include="Properties\DataSources\society.societyDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\society.societyDataSetTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\society.societyDataSetTableAdapters.TableTableAdapter.datasource" />
+    <None Include="Properties\DataSources\societyDataSet.datasource" />
+    <None Include="Properties\DataSources\societyDataSet.raiestateDataTable.datasource" />
+    <None Include="Properties\DataSources\societyDataSet.raiestateRow.datasource" />
+    <None Include="Properties\DataSources\societyDataSet.raiestateRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\societyDataSet.raiestateRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\societyDataSet.Table2DataTable.datasource" />
+    <None Include="Properties\DataSources\societyDataSet.Table2Row.datasource" />
+    <None Include="Properties\DataSources\societyDataSet.Table2RowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\societyDataSet.Table2RowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\societyDataSet.TableDataTable.datasource" />
+    <None Include="Properties\DataSources\societyDataSet.TableRow.datasource" />
+    <None Include="Properties\DataSources\societyDataSet.TableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\societyDataSet.TableRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.raiestatDataTable.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.raiestateDataTable.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.raiestateRow.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.raiestateRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.raiestateRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.raiestatRow.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.raiestatRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.raiestatRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.Table2DataTable.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.Table2Row.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.Table2RowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.Table2RowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.TableDataTable.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.TableRow.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.TableRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\societyDataSet1.TableRowChangeEventHandler.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="societyDataSet.xsc">
+      <DependentUpon>societyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="societyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>societyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="societyDataSet.xss">
+      <DependentUpon>societyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="societyDataSet1.xsc">
+      <DependentUpon>societyDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="societyDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>societyDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="societyDataSet1.xss">
+      <DependentUpon>societyDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="societyDataSet2.xsc">
+      <DependentUpon>societyDataSet2.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="societyDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>societyDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="societyDataSet2.xss">
+      <DependentUpon>societyDataSet2.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="societyDataSet3.xsc">
+      <DependentUpon>societyDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="societyDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>societyDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="societyDataSet3.xss">
+      <DependentUpon>societyDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="societyDataSet4.xsc">
+      <DependentUpon>societyDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="societyDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>societyDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="societyDataSet4.xss">
+      <DependentUpon>societyDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="societyDataSet5.xsc">
+      <DependentUpon>societyDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="societyDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>societyDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="societyDataSet5.xss">
+      <DependentUpon>societyDataSet5.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="society.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="society_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>society.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
