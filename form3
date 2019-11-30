@@ -1,0 +1,126 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+using DGVPrinterHelper;
+
+namespace society
+{
+    public partial class Form3 : Form
+    {
+        public Form3()
+        {
+            InitializeComponent();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'societyDataSet5.raiestatefirsta' table. You can move, or remove it, as needed.
+            this.raiestatefirstaTableAdapter.Fill(this.societyDataSet5.raiestatefirsta);
+           
+
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            searchAccessDatabase();
+        }
+        private void searchAccessDatabase()
+        {
+            if (string.IsNullOrEmpty(textBox1.Text.Trim()))
+            {
+                refreshData();
+                return;
+            }
+            string strKeyword = textBox1.Text.Trim().ToString();
+            StringBuilder sb = new StringBuilder();
+            sb.AppendFormat("(Convert(SrNo,'System.String') LIKE '" + "{0}" + "')", strKeyword);
+            sb.AppendFormat("OR (Project_name LIKE '*" + "{0}" + "*')", strKeyword);
+            sb.AppendFormat("OR (Status LIKE '*" + "{0}" + "*')", strKeyword);
+            string strFilter = sb.ToString();
+            raiestatefirstaBindingSource.Filter = strFilter;
+            if (raiestatefirstaBindingSource.Count != 0)
+            {
+                dataGridView1.DataSource = raiestatefirstaBindingSource;
+            }
+            else
+            {
+                MessageBox.Show("Sorry , No Record Found");
+                refreshData();
+                return;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            refreshData();
+        }
+        private void refreshData()
+        {
+            raiestatefirstaBindingSource.Filter = null;
+            this.raiestatefirstaTableAdapter.Fill(this.societyDataSet5.raiestatefirsta);
+            if (textBox1.CanSelect)
+            {
+                textBox1.Clear();
+                textBox1.Select();
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 s = new Form1();
+            s.ShowDialog();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        void FillDataGridView()
+        {
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\AADITRI RAI\SOURCE\REPOS\SOCIETY\SOCIETY\SOCIETY.MDF;Integrated Security=True;Connect Timeout=30");
+            SqlCommand cmd = new SqlCommand("select * from raiestatefirsta", con);
+            con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            con.Close();
+            dataGridView1.DataSource = dt;
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FillDataGridView();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "CLIENT DETAIL";//Header
+            printer.SubTitle = string.Format("Date: {0}", DateTime.Now.Date);
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = "Rai Realtors";//Footer
+            printer.FooterSpacing = 15;
+            printer.PrintDataGridView(dataGridView1);
+        }
+    }
+}
